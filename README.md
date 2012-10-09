@@ -32,7 +32,8 @@ which has 16 10-bit analog inputs. 14 of them are used in the initial design.
 12 slider potentiometers, and a switch are used for speaker and oscillator 
 selection plus one rotary potentiometer for the filter and another switch to 
 select between keyboard and 'bague'. Another analog input is reserved for 
-a keyboard-shake sensor.
+a keyboard-shake sensor. 28 digital outputs are used to control 14 bicolor
+(red/green/amber) status LEDs.
 
 The volume envelope is implemented using a high-resolution optical mouse
 sensor.
