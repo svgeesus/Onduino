@@ -5,7 +5,7 @@ century electronic musical instrument.
 http://en.wikipedia.org/wiki/Ondes_Martenot
 
 The name Onduino combines the "Ondes Martenot" and the Arduino, which 
-is used to realize the MIDI cntroller.
+is used to realize the MIDI controller.
 
 MIDI makes no sound by itself, so the controller needs to be used with 
 some sort of MIDI-enabled instrument. I use the Soniccouturte VSTi 
@@ -15,7 +15,7 @@ http://www.soniccouture.com/en/products/28-ancient-rare-and-experimental/g27-ond
 
 The initial implementation just covers the 'tiroir' - the switches to select 
 different oscillators, different speakers, the low-pass filter, and to control 
-the volume envelope. Unlike the original hardware (but like the Soniccouture VTi) 
+the volume envelope. Unlike the original hardware (but like the Soniccouture VSTi) 
 the switches are replaced by sliders. So instead of a simple on-off, each oscillator 
 and each speaker has a 0..127 range, controlled by MIDI.
 
@@ -32,9 +32,11 @@ which has 16 10-bit analog inputs. 14 of them are used in the initial design.
 12 slider potentiometers, and a switch are used for speaker and oscillator 
 selection plus one rotary potentiometer for the filter and another switch to 
 select between keyboard and 'bague'. Another analog input is reserved for 
-a keyboard-shake sensor. 28 digital outputs are used to control 14 bicolor
-(red/green/amber) status LEDs.
+a keyboard-shake sensor. 
+
+28 digital outputs are used to control 14 bicolor (red/green/amber) status LEDs.
 
 The volume envelope is implemented using a high-resolution optical mouse
-sensor.
+sensor, the ADNS3080, which reports on movement of the volume control ("touche 
+d'intensité") since the last time it was polled. The sensor connects over an SPI bus.
 
