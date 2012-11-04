@@ -34,9 +34,26 @@ selection plus one rotary potentiometer for the filter and another switch to
 select between keyboard and 'bague'. Another analog input is reserved for 
 a keyboard-shake sensor. 
 
-28 digital outputs are used to control 14 bicolor (red/green/amber) status LEDs.
+The analog inputs are buffered with unity-gain stages using the MCP 6231 
+rail-to-rail op-amp. The analog stage has a dedicated 5V power supply. This design 
+allows the ADC to be updated later to a  16-bit design (MIDI can theoretically 
+deal with 14-bit controller changes) without having to change the analog board 
+or front panel hardware.
+
+28 digital outputs are used to control 14 bicolor (red/green/amber) status LEDs. 
+These are high brightness, but driven at a fairly low current.
 
 The volume envelope is implemented using a high-resolution optical mouse
 sensor, the ADNS3080, which reports on movement of the volume control ("touche 
 d'intensité") since the last time it was polled. The sensor connects over an SPI bus.
+
+MIDI over USB is handled by a Teensy 2.0 Arduino-comatible board, set to native 
+USB MIDI mode. The Mega2560 connects to this over serial.
+
+User interface for setup and calibration is handled by an Arduino Uno with a 
+Snootlabs Deuligne 16x2 LCD display sheild. Config information is passed to the
+Mega 2560 over serial. The Uno will also handle the 'bague' controller, using 
+an I2C 16-bit ADC and a ten-turn high linearity wirewound potentiometer. The 
+result is sent directly to the PC, since MIDI can't represent continuous-note 
+controllers.
 
