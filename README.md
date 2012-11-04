@@ -39,6 +39,7 @@ rail-to-rail op-amp. The analog stage has a dedicated 5V power supply. This desi
 allows the ADC to be updated later to a  16-bit design (MIDI can theoretically 
 deal with 14-bit controller changes) without having to change the analog board 
 or front panel hardware.
+http://ww1.microchip.com/downloads/en/devicedoc/21881e.pdf
 
 28 digital outputs are used to control 14 bicolor (red/green/amber) status LEDs. 
 These are high brightness, but driven at a fairly low current.
@@ -46,14 +47,18 @@ These are high brightness, but driven at a fairly low current.
 The volume envelope is implemented using a high-resolution optical mouse
 sensor, the ADNS3080, which reports on movement of the volume control ("touche 
 d'intensité") since the last time it was polled. The sensor connects over an SPI bus.
+http://www.avagotech.com/docs/AV02-0366EN
 
 MIDI over USB is handled by a Teensy 2.0 Arduino-comatible board, set to native 
 USB MIDI mode. The Mega2560 connects to this over serial.
+http://www.pjrc.com/teensy/index.html
 
 User interface for setup and calibration is handled by an Arduino Uno with a 
-Snootlabs Deuligne 16x2 LCD display sheild. Config information is passed to the
-Mega 2560 over serial. The Uno will also handle the 'bague' controller, using 
-an I2C 16-bit ADC and a ten-turn high linearity wirewound potentiometer. The 
-result is sent directly to the PC, since MIDI can't represent continuous-note 
-controllers.
+Snootlabs Deuligne 16x2 LCD display sheild. 
+http://snootlab.com/lang-en/snootlab-shields/135-deuligne-en.html
+
+Config information is passed to the Mega 2560 over serial. The Uno will also 
+handle the 'bague' controller, using an I2C 16-bit ADC and a ten-turn high 
+linearity wirewound potentiometer. The result is sent directly to the PC, 
+since MIDI can't represent continuous-note controllers.
 
