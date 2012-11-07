@@ -17,7 +17,7 @@ the volume envelope. Unlike the original hardware (but like the Soniccouture VST
 the switches are replaced by sliders. So instead of a simple on-off, each oscillator 
 and each speaker has a 0..127 range, controlled by MIDI.
 
-A full implementation would also include a keyboard (the Ones Martenot 
+A full implementation would also include a keyboard (the Ondes Martenot 
 used a smaller than full size, 5-octave keyboard), vibrato (the keyboard 
 moves from side to side), and the 'bague' or ring, a continuous pitch controller.
 This last aspect does not map well to MIDI.
