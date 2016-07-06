@@ -1,3 +1,8 @@
+# No longer under development. 
+MIDI is not really suitable for instruments requiring continuous, streamed performance data. Instead, see
+https://github.com/svgeesus/ondesModulaire
+
+#Intro (obsolete)
 Onduino is an open-source MIDI controller intended to replicate the 
 tactile experience of playing an Ondes Martenot, an early 20th 
 century electronic musical instrument.
